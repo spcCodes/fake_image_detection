@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.claude/
+.venv/
+.cursor/
+.env
+
+__pycache__/
+
+.DS_Store
+
+# External model repositories (cloned separately — not tracked in this repo)
+Community-Forensics/
+Effort-AIGI-Detection/
+
+# Large model weight files (download separately — see README)
+weights/
