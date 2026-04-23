@@ -84,8 +84,8 @@ ELA is always displayed alongside the ensemble result.
 ### 1. Clone this repository
 
 ```bash
-git clone <this-repo-url>
-cd ai_fake_image_detection
+git clone https://github.com/spcCodes/fake_image_detection.git
+cd fake_image_detection
 ```
 
 ### 2. Clone the external model repositories
@@ -100,7 +100,7 @@ git clone https://github.com/YZY-stack/Effort-AIGI-Detection.git
 Your directory should then look like:
 
 ```
-ai_fake_image_detection/
+fake_image_detection/
 ├── Community-Forensics/       ← cloned here
 ├── Effort-AIGI-Detection/     ← cloned here
 ├── app.py
@@ -119,7 +119,7 @@ Or with pip:
 pip install -e .
 ```
 
-### 3. Download Effort model weights
+### 4. Download Effort model weights
 
 Download the two checkpoints from the [Effort-AIGI-Detection repository](https://github.com/YZY-stack/Effort-AIGI-Detection) and place them in `weights/`:
 
@@ -131,7 +131,7 @@ weights/
 
 Community Forensics weights are downloaded automatically from HuggingFace on first run.
 
-### 4. (Optional) Set OpenAI API key
+### 5. (Optional) Set OpenAI API key
 
 ```bash
 export OPENAI_API_KEY=sk-...
@@ -139,7 +139,7 @@ export OPENAI_API_KEY=sk-...
 
 Or enter it directly in the app sidebar.
 
-### 5. Run the app
+### 6. Run the app
 
 ```bash
 streamlit run app.py
@@ -172,7 +172,7 @@ streamlit run app.py
 ## Project Structure
 
 ```
-ai_fake_image_detection/
+fake_image_detection/
 ├── app.py                    # Streamlit UI
 ├── inference.py              # Effort model loader + predict()
 ├── commfor_inference.py      # Community Forensics loader + predict_commfor()
@@ -180,10 +180,10 @@ ai_fake_image_detection/
 ├── openai_analysis.py        # analyse_with_gpt4o() — GPT-4o integration
 ├── main.py                   # Entry point placeholder
 ├── pyproject.toml            # Dependencies
-├── weights/                  # Effort model checkpoints (~1.2 GB each)
+├── weights/                  # Effort model checkpoints (~1.2 GB each, not tracked)
 ├── data/                     # Sample test images
-├── Community-Forensics/      # CVPR 2025 model (cloned separately)
-└── Effort-AIGI-Detection/    # ICML 2025 model (cloned separately)
+├── Community-Forensics/      # CVPR 2025 model (cloned separately, not tracked)
+└── Effort-AIGI-Detection/    # ICML 2025 model (cloned separately, not tracked)
     └── DeepfakeBench/training/
         ├── detectors/effort_detector.py   # EffortDetector, SVDResidualLinear
         └── config/detector/effort.yaml    # Training config
